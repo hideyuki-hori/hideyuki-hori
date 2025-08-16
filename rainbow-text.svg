@@ -14,7 +14,7 @@
         .rainbow-text {
           font-size: 24px;
           font-weight: bold;
-          animation: rainbow 0.2s linear infinite;
+          animation: rainbow 1s linear infinite;
           font-family: 'Arial', sans-serif;
           text-align: center;
           line-height: 1.5;

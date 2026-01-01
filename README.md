@@ -4,9 +4,8 @@ shardっていうブラウザで動くnode editorを作ってる。
 
 進捗はここに書いてる。
 
-https://github.com/users/hideyuki-hori/projects/13/views/1
-
-たまにzenn書くわ -> https://zenn.dev/hideyuki_hori
+- [GitHub Project](https://github.com/users/hideyuki-hori/projects/13/views/1)
+- [Zenn](https://zenn.dev/hideyuki_hori)
 
 2025-12-31時点のmock
 

@@ -10,10 +10,13 @@ shardっていうブラウザで動くnode editorを作ってる。
 以下の技術的な欲求を満たしたい。
 
 - ECS(awsじゃないほう)
-- Effect.ts(ほんとはHaskellやF#がすきだが、すきなWeb上で関数型アプローチができるため)
+- Effect.ts(ほんとはHaskellやF#がすきだが、Webアプリがすきだし関数型アプローチができるため)
 - CQRS
 - Event Sourcing
 - p2p
+- WebGPU
+
+Rustもすきなのでできればwasmをいれたいが、呼び出しコストが思ったよりおおきかったので様子見中。
 
 2025-12-31時点のmock
 

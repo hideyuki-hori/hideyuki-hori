@@ -1,6 +1,8 @@
 # I ♥ WebGPU
 
 shardっていうブラウザで動くnode editorを作ってる。
+VJが使うようなアートツールをイメージしている。
+urlにアクセスしただけでアプリが立ち上がり、ローカルDBにユーザーデータを格納、必要があれば別のユーザーとサーバを介さずに(シグナリングは別として)やり取りできるものを作ってみたい。
 
 進捗はここに書いてる。
 
@@ -9,16 +11,18 @@ shardっていうブラウザで動くnode editorを作ってる。
 
 以下の技術的な欲求を満たしたい。
 
-- ECS(awsじゃないほう)
-- Effect.ts(ほんとはHaskellやF#がすきだが、Webアプリがすきだし関数型アプローチができるため)
+- WebGPU
+- ECS(Entity Component System)
+- Effect.ts
+  - ほんとはHaskellやF#がすきだが、Webアプリがすきだし関数型アプローチができるため
 - CQRS
 - Event Sourcing
 - p2p
-- WebGPU
+- DuckDB-WASM
 
-Rustもすきなのでできればwasmをいれたいが、呼び出しコストが思ったよりおおきかったので様子見中。
+低レイヤー操作に強い関心があり、Rustもすきなのでできればwasmをいれたいが、呼び出しコストが思ったよりおおきかったので様子見中。
 
 2025-12-31時点のmock
 
-<img width="1512" height="982" alt="MacBook Pro 14" src="https://github.com/user-attachments/assets/2613da4f-398e-4d3d-9681-fe5852d21acc" />
+<img width="1512" height="982" alt="shard mock screenshot" src="https://github.com/user-attachments/assets/2613da4f-398e-4d3d-9681-fe5852d21acc" />
 

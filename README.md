@@ -1,7 +1,7 @@
 # I ♥ WebGPU
 
-shardっていうブラウザで動くnode editorを作ってる。  
-VJが使うようなアートツールをイメージしている。
+shardっていうブラウザで動くVJが使うようなアートツールを作ってる。
+HoudiniやUnityのVFX Graphのようなものを考えている。
 
 urlにアクセスしただけでアプリが立ち上がり、ローカルDBにユーザーデータを格納、必要があれば別のユーザーとサーバを介さずに(シグナリングは別として)やり取りできるものを作ってみたい。
 
@@ -26,6 +26,29 @@ urlにアクセスしただけでアプリが立ち上がり、ローカルDBに
 2025-12-31時点のmock
 
 <img width="1512" height="982" alt="shard mock screenshot" src="https://github.com/user-attachments/assets/2613da4f-398e-4d3d-9681-fe5852d21acc" />
+
+# 今ハマってること
+
+DuckDB-WASM + Effect で CQRS + EventSourcing + Streamを実現したい。
+ユーザーデータはユーザーのpcで管理したい。
+アプリを操作して出たeventはそのまま保存したい。
+アプリで使用するデータはProjectionを通して使いたい。
+Command実行後は成功のStreamで画面を更新したい。
+
+ResultがほしかったからEffectに興味を持った。
+触ってみるとStream合成が楽しく型もちゃんとしててよかった。
+
+C#のMessagePipeにハマってたときDIがほしくなった。
+というのもMessagingをするときLifetimeの管理が難しい。
+Scopeが死ねば自動でCloseされる仕組みがたのしかった。
+Service LocatorやSingletonのような簡易的なものも試したが、自分から取りに行く系の仕組みにすると依存関係が散らばりすぎてしんどくなる。
+
+Stream処理がやりたいとDIが欲しくなり、DIを入れようとすると型システムが欲しくなる。パターンマッチングのためのTaggedErrorとかほしいよな。
+またEffectはgeneratorで処理することもいい。
+promiseでもええやんという考え方もあるが、eventのfork/race/merge/join/cancelがとにかく直感的にかけるのが嬉しい。
+ということでそういうデータ構造とevent管理を試してる。
+
+https://github.com/hideyuki-hori/lab-effect-duckdb-wasm-cqrs-es-stream
 
 # これまで試したもの
 

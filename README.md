@@ -1,4 +1,4 @@
-# I ♥ WebGPU
+# I ♥ Web*
 
 shardっていうブラウザで動くVJが使うようなアートツールを作ってる。
 HoudiniやUnityのVFX Graphのようなものを考えている。

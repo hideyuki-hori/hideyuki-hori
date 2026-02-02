@@ -1,5 +1,3 @@
-![](https://komarev.com/ghpvc/?username=hideyuki-hori)
-
 # I ♥ Web*
 
 shardっていうブラウザで動くVJが使うようなアートツールを作ってる。

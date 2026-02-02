@@ -1,4 +1,4 @@
-![](https://komarev.com/ghpvc/?username=hideyuki_hori)
+![](https://komarev.com/ghpvc/?username=hideyuki-hori)
 
 # I ♥ Web*
 

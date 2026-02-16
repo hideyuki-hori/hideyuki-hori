@@ -137,3 +137,19 @@ WebGLは構文がしんどく、WebGPUに興味が移ったがWebGPUもそんな
 WebGLのfragment shaderにハマってたときこれ作ってた -> https://glsl-studies.every.fail/
 
 TypeGPUにちょっとだけ興味が移ったが、今は生のWebGPUがすき。
+
+## 4. WebGPU + Effect.ts
+
+OffscreenCanvas + Workerで描画をメインスレッドから分離して、CodeMirrorとWebGPUの描画が干渉しないようにした。
+Effect.tsのStream / Queue / Refで複数のストリームをFiberとして並行実行し、Queueで協調させている。
+
+RxJSのときに感じていた型の表現力の不足が、Effect.tsだと解消された。
+`Data.TaggedEnum` + `Match.exhaustive`でWorker通信の網羅性がコンパイル時に保証される。
+`Context.Tag` + `Layer`によるDIもあるので、RxJSで足りなかった部分が全部入っている感じがする。
+
+素のAsyncGeneratorでも単純なストリーム処理はできるが、複数ストリームの並行実行＋キュー＋キャンセル処理を自前で書くのはしんどい。
+Effectはそのへんが最初から組み込まれているので、イベント駆動のアプリとの相性がかなり良かった。
+
+- https://github.com/hideyuki-hori/lab-webgpu-editor
+- https://zenn.dev/hideyuki_hori/articles/36b43324221f3d
+- 動いてるサイト -> https://lab-webgpu-editor.every.fail

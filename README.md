@@ -5,11 +5,6 @@ HoudiniやUnityのVFX Graphのようなものを考えている。
 
 urlにアクセスしただけでアプリが立ち上がり、ローカルDBにユーザーデータを格納、必要があれば別のユーザーとサーバを介さずに(シグナリングは別として)やり取りできるものを作ってみたい。
 
-進捗はここに書いてる。
-
-- [GitHub Project](https://github.com/users/hideyuki-hori/projects/13/views/1)
-- [Zenn](https://zenn.dev/hideyuki_hori)
-
 以下の技術的な欲求を満たしたい。
 
 - WebGPU

@@ -1,4 +1,4 @@
-# I ♥ Web*
+# I ♥ Stream based architecture
 
 shardっていうブラウザで動くVJが使うようなアートツールを作ってる。
 HoudiniやUnityのVFX Graphのようなものを考えている。

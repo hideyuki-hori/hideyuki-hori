@@ -1,150 +1,24 @@
 # I ♥ Stream based architecture
 
-shardっていうブラウザで動くVJが使うようなアートツールを作ってる。
-HoudiniやUnityのVFX Graphのようなものを考えている。
+<center>同じ川に二度入ることはできない</center>
 
-urlにアクセスしただけでアプリが立ち上がり、ローカルDBにユーザーデータを格納、必要があれば別のユーザーとサーバを介さずに(シグナリングは別として)やり取りできるものを作ってみたい。
+ヘラクレイトスの言葉がすきだ。
+川の水は常に流れ、足を踏み入れるたびに異なる水に入れ替わっており、同時に、入る側の人間も常に変化しているため、同じ状態は二度と訪れないという意味。
+プログラミングでも状態ではなく、出来事が積み重なっていくことにロマンを感じる。
 
-以下の技術的な欲求を満たしたい。
+Streamはそれをコードで表現する手段で、何を作ってもStreamが最上級の解決策に思えてくる。
 
-- WebGPU
-- ECS(Entity Component System)
-- Effect.ts
-  - ほんとはHaskellやF#がすきだが、Webアプリがすきだし関数型アプローチができるため
-- CQRS
-- Event Sourcing
-- p2p
-- DuckDB-WASM
+フロント(WebGPU)を書いてるとバックエンドがやりたくなり、バックエンドを書いてるとフロントがやりたくなる。
+どちらか片方では満足できないので、2つのプロジェクトに分けている。
 
-低レイヤー操作に強い関心があり、Rustもすきなのでできればwasmをいれたいが、呼び出しコストが思ったよりおおきかったので様子見中。
+## [shard](https://github.com/hideyuki-hori/shard)
 
-2025-12-31時点のmock
+ブラウザで動くVJアートツール。HoudiniやUnityのVFX Graphのようなノードベースエディタ。
+WebGPU + ECS + Effect.ts + DuckDB-WASM。
+urlにアクセスしただけで立ち上がり、ローカルにデータを持ち、p2pでつながる。
 
-<img width="1512" height="982" alt="shard mock screenshot" src="https://github.com/user-attachments/assets/2613da4f-398e-4d3d-9681-fe5852d21acc" />
+## [cadaver](https://github.com/hideyuki-hori/cadaver)
 
-# 今ハマってること
-
-DuckDB-WASM + Effect で CQRS + EventSourcing + Streamを実現したい。
-ユーザーデータはユーザーのpcで管理したい。
-アプリを操作して出たeventはそのまま保存したい。
-アプリで使用するデータはProjectionを通して使いたい。
-Command実行後は成功のStreamで画面を更新したい。
-
-ResultがほしかったからEffectに興味を持った。
-触ってみるとStream合成が楽しく型もちゃんとしててよかった。
-
-C#のMessagePipeにハマってたときDIがほしくなった。  
-MessagingをするときLifetimeの管理が難しいがMessagePipe+VContainerでScopeが死ねば自動でCloseされる仕組みがたのしかった。  
-Service LocatorやSingletonのような簡易的なものも試したが、自分から取りに行く系の仕組みにすると依存関係が散らばりすぎてしんどくなる。  
-
-Stream処理がやりたいとDIが欲しくなり、DIを入れようとすると型システムが欲しくなる。  
-パターンマッチングのためにTaggedErrorもほしい。  
-またEffectはgeneratorで処理することもいい。  
-promiseでもええやんという考え方もあるが、eventのfork/race/merge/join/cancelがとにかく直感的にかけるのが嬉しい。  
-Redux Saga(+PixiJS)でレントゲン画像に線や丸、テキストなどを書き込むwebアプリを作ってた時があったのだが、グラフィックス関連は手続き型でかけると嬉しい。  
-というのもグラフィックス関連は一般的なCRUDアプリより「似て非なるもの」が生まれやすいと思う。  
-同じコードでも使う所によって使われ方が違うことがよくある。  
-なのでrequest eventが起きたら書きやすいように書いて、終わったらeventを発行するくらいの緩いつながりがいい。
-
-```ts
-function* watchCreateLineCommand() {
-  while (true) {
-    const { payload } = yield take(broker.pointerPressed())
-    const line = ...
-    // ここに難しいコード
-    yield put(broker.lineCreated(line))
-  }
-}
-```
-
-ということでそういうデータ構造とevent管理を試してる。
-
-https://github.com/hideyuki-hori/lab-effect-duckdb-wasm-cqrs-es-stream
-
-## 試してたこと
-
-DuckDB-WASMの保存先にindexedDBも検討したが、indexedDBとアプリの状態を同期するとき状態を丸ごと保存していた。  
-データが育つとしんどくなりそうなので、ステートメント(insert/update/delete)ごとに部分書き込みできるようにしたかった。  
-DuckDB-WASMはOPFSに保存するとステートメントの度に永続化可能だったので、以下を試してみた。
-
-まずはOPFSがどんなものかを調べてた。  
-
-- https://github.com/hideyuki-hori/lab-opfs
-- https://zenn.dev/hideyuki_hori/articles/8c85fc91aba89f
-
-書き込み速度を安定させたかったので書き込みを同期的に書く方法も試した。  
-ファイルlockできるのがとてもいいが複数タブからの書き込みがつらそう。
-Web Locks+BroadcastChannel+MessagePortでworkerを[共有できそう](https://github.com/rhashimoto/wa-sqlite/blob/master/demo/SharedService/SharedService.js)なので試したい。
-jsonlで保存してみたが、event storeとしてはこれでもいいかもしれない。
-
-- https://github.com/hideyuki-hori/lab-opfs-web-worker
-- https://zenn.dev/hideyuki_hori/articles/3abc10be8d9ca0
-
-DuckDB-WASMでステートメントごとに書き込む方法も試した。
-
-- https://github.com/hideyuki-hori/lab-duckdb-wasm
-- https://zenn.dev/hideyuki_hori/articles/ae523f62f32fb8
-
-# これまで試したもの
-
-## 1. RxJS + WebWorkerで負荷の高い処理をオフロードできないかについて
-
-個人的にRxJSは多少クセはあれど非常にわかりやすいライブラリだと思うが、型の表現力が物足りなかった。
-特にmergeしたstreamの型付けが難しい。
-WebWorkerは夢があるので今後も触っていきたい。
-
-- https://github.com/hideyuki-hori/distribution-worker
-- https://zenn.dev/hideyuki_hori/articles/3823e2cf589fd1
-
-- 動いてるサイト -> https://distribution-worker.every.fail/
-
-## 2. Cloudflare Durable Objects + WebSocket
-
-WebSocketが試したくて作った。
-運用費がいきなりハネたりしないかビビってcf workerにはあげてない。
-
-- https://github.com/hideyuki-hori/clayish/
-- https://zenn.dev/hideyuki_hori/articles/c6aa9ae673e5c5
-
-作ってる途中でやっぱりp2pがいいなぁ、中央集権な作りより分散がすきだなぁと思った。
-分散は自由な感じがする。
-
-## 3. WebGL -> WebGPU
-
-JSXがすきなので、three.jsをReactで操作できるものを試してみた。
-
-- https://github.com/hideyuki-hori/love-poimandres
-- https://zenn.dev/hideyuki_hori/articles/6d3f710b794154
-- 動いてるサイト -> https://love-poimandres.every.fail/
-
-poimandresのライブラリはとても便利だなと思うが、おしゃれなサイトでよく出てくる感じになるなと思った。
-カタログから選んでる感じが苦手。
-自分がライブラリに求めてるのは関数群であって、積極的に副作用を起こすものは苦手かもしれない。
-Three.js自体がかなりリッチなライブラリなので、poimandresだけの問題ではないがそう思った。
-poimandresはおしゃれだし、Post Processingのコードは特に勉強になった。  
-この手のライブラリは使うのではなくリファレンスとして付き合いたい。  
-いろいろ言ったが、見た目の分野は一定の正解があるように思う。すごいやつはちょっと外して見せてるが、基本的なところは守ってる印象がある。  
-その正解をThree.js+poimandresで学べるなと感じた。
-
-WebGLは構文がしんどく、WebGPUに興味が移ったがWebGPUもそんなに楽じゃない。
-ただRustに似た文法で洗練されていて書いていて気持ちいい。
-
-WebGLのfragment shaderにハマってたときこれ作ってた -> https://glsl-studies.every.fail/
-
-TypeGPUにちょっとだけ興味が移ったが、今は生のWebGPUがすき。
-
-## 4. WebGPU + Effect.ts
-
-OffscreenCanvas + Workerで描画をメインスレッドから分離して、CodeMirrorとWebGPUの描画が干渉しないようにした。
-Effect.tsのStream / Queue / Refで複数のストリームをFiberとして並行実行し、Queueで協調させている。
-
-RxJSのときに感じていた型の表現力の不足が、Effect.tsだと解消された。
-`Data.TaggedEnum` + `Match.exhaustive`でWorker通信の網羅性がコンパイル時に保証される。
-`Context.Tag` + `Layer`によるDIもあるので、RxJSで足りなかった部分が全部入っている感じがする。
-
-素のAsyncGeneratorでも単純なストリーム処理はできるが、複数ストリームの並行実行＋キュー＋キャンセル処理を自前で書くのはしんどい。
-Effectはそのへんが最初から組み込まれているので、イベント駆動のアプリとの相性がかなり良かった。
-
-- https://github.com/hideyuki-hori/lab-webgpu-editor
-- https://zenn.dev/hideyuki_hori/articles/36b43324221f3d
-- 動いてるサイト -> https://lab-webgpu-editor.every.fail
+クロスボーダー送金におけるカオスエンジニアリング。
+Rust + KurrentDB + PostgreSQL。
+分散システム上のStream処理が障害下でどう振る舞うかを検証してる。

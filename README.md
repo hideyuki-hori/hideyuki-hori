@@ -1,5 +1,3 @@
-# I ♥ Stream based architecture
-
 <div align="center">同じ川に二度入ることはできない</div>
 <br/>
 <br/>

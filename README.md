@@ -1,8 +1,8 @@
 # I ♥ Event Driven Architecture
 
-## Done
-
 **[i-love-event-driven-architecture](https://github.com/hideyuki-hori/i-love-event-driven-architecture)**
+
+## Done
 
 - Kafka を理解する
   - [repo - `sandbox/01-kafka`](https://github.com/hideyuki-hori/i-love-event-driven-architecture/tree/sandbox/01-kafka)

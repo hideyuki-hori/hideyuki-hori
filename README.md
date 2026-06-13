@@ -1,7 +1,5 @@
 # I ♥ Event Architecture
 
-イベント駆動アーキテクチャを、手を動かして一つずつ理解していくのが好きです。
-
 ## いま試していること
 
 **[love-event-architecture](https://github.com/hideyuki-hori/love-event-architecture)**

@@ -1,6 +1,6 @@
 # I ♥ Event Driven Architecture
 
-## 試したこと
+## Done
 
 **[i-love-event-driven-architecture](https://github.com/hideyuki-hori/i-love-event-driven-architecture)**
 
@@ -13,9 +13,12 @@
   - [zenn(ja)](https://zenn.dev/hideyuki_hori/articles/8d13751240091c)
   - [zenn(en)](https://zenn.dev/hideyuki_hori/articles/8d13751240091c?locale=en)
 
+## In Progress
+
+- Cassandra
+
 ## TODO
 
-- cassandra
 - debezium
 - schema-registry-avro
 - kafka-streams

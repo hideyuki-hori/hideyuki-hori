@@ -2,15 +2,13 @@
 
 ## いま試していること
 
-**[love-event-architecture](https://github.com/hideyuki-hori/love-event-architecture)**
+**[i-love-event-driven-architecture](https://github.com/hideyuki-hori/i-love-event-driven-architecture)**
 
-- `sandbox/01-kafka` — Kafka (KRaft) を Java から動かす
-- `sandbox/02-kafka-connect` — Kafka Connect でノーコード連携
-
-## 書いているもの
-
-https://zenn.dev/hideyuki_hori
-
-## よく使う
-
-Java / Docker / Kafka
+- Kafka を理解する
+  - [repo - `sandbox/01-kafka`](https://github.com/hideyuki-hori/i-love-event-driven-architecture/tree/sandbox/01-kafka)
+  - [zenn(ja)](https://zenn.dev/hideyuki_hori/articles/8ce83fd931baa8)
+  - [zenn(en)](https://zenn.dev/hideyuki_hori/articles/8ce83fd931baa8?locale=en)
+- Kafka Connect を理解する
+  - [repo - `sandbox/02-kafka-connect`](https://github.com/hideyuki-hori/i-love-event-driven-architecture/tree/sandbox/02-kafka-connect)
+  - [zenn(ja)](https://zenn.dev/hideyuki_hori/articles/8ce83fd931baa8)
+  - [zenn(en)](https://zenn.dev/hideyuki_hori/articles/8ce83fd931baa8?locale=en)

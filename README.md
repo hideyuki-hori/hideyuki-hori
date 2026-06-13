@@ -12,3 +12,11 @@
   - [repo - `sandbox/02-kafka-connect`](https://github.com/hideyuki-hori/i-love-event-driven-architecture/tree/sandbox/02-kafka-connect)
   - [zenn(ja)](https://zenn.dev/hideyuki_hori/articles/8d13751240091c)
   - [zenn(en)](https://zenn.dev/hideyuki_hori/articles/8d13751240091c?locale=en)
+
+## TODO
+
+- cassandra
+- debezium
+- schema-registry-avro
+- kafka-streams
+- flink

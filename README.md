@@ -1,6 +1,6 @@
 # I ♥ Event Driven Architecture
 
-## いま試していること
+## 試したこと
 
 **[i-love-event-driven-architecture](https://github.com/hideyuki-hori/i-love-event-driven-architecture)**
 

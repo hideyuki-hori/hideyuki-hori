@@ -1,4 +1,4 @@
-# I ♥ Event Architecture
+# I ♥ Event Driven Architecture
 
 ## いま試していること
 

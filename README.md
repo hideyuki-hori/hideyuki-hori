@@ -25,9 +25,9 @@ CPU使用率にもディスクアクセス数にも負けぬ
 
 ## Done
 
-- [🪲 Kafka を理解する](https://zenn.dev/hideyuki_hori/articles/8ce83fd931baa8)
-- [🔌 Kafka Connect を理解する](https://zenn.dev/hideyuki_hori/articles/8d13751240091c)
-- [🔮 Cassandra を理解する](https://zenn.dev/hideyuki_hori/articles/c51f9183cebf89)
+- 2026-06-14 [🔮 Cassandra を理解する](https://zenn.dev/hideyuki_hori/articles/c51f9183cebf89)
+- 2026-06-13 [🔌 Kafka Connect を理解する](https://zenn.dev/hideyuki_hori/articles/8d13751240091c)
+- 2026-06-13 [🪲 Kafka を理解する](https://zenn.dev/hideyuki_hori/articles/8ce83fd931baa8)
 
 > If you'd like to read these articles in English, try appending `?locale=en` to the article URL.
 > If Zenn has finished its automatic translation, you'll be able to read them in English.

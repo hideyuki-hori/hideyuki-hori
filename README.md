@@ -10,11 +10,10 @@
 
 ## In Progress
 
-- thinking...
+- debezium
 
 ## TODO
 
-- debezium
 - schema-registry-avro
 - kafka-streams
 - flink

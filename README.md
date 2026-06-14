@@ -4,9 +4,9 @@
 
 ## Done
 
-- [Kafka を理解する](https://zenn.dev/hideyuki_hori/articles/8ce83fd931baa8)
-- [Kafka Connect を理解する](https://zenn.dev/hideyuki_hori/articles/8d13751240091c)
-- [Cassandra を理解する](https://zenn.dev/hideyuki_hori/articles/c51f9183cebf89)
+- [🪲 Kafka を理解する](https://zenn.dev/hideyuki_hori/articles/8ce83fd931baa8)
+- [🔌 Kafka Connect を理解する](https://zenn.dev/hideyuki_hori/articles/8d13751240091c)
+- [🔮 Cassandra を理解する](https://zenn.dev/hideyuki_hori/articles/c51f9183cebf89)
 
 ## In Progress
 

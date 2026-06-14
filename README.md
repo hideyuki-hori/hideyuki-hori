@@ -8,6 +8,9 @@
 - [🔌 Kafka Connect を理解する](https://zenn.dev/hideyuki_hori/articles/8d13751240091c)
 - [🔮 Cassandra を理解する](https://zenn.dev/hideyuki_hori/articles/c51f9183cebf89)
 
+> If you'd like to read these articles in English, try appending `?locale=en` to the article URL.
+> If Zenn has finished its automatic translation, you'll be able to read them in English.
+
 ## In Progress
 
 - debezium

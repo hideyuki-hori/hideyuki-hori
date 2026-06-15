@@ -35,17 +35,15 @@ CPU使用率にもディスクアクセス数にも負けぬ
 
 ## In Progress
 
-- thinking...
+- schema-registry-avro
 
 ## TODO
 
-1. schema-registry-avro
-1. Trino
-1. Schema Registry
-1. Iceberg
-1. OpenTelemetry
 1. kafka-streams(FW)
 1. flink
+1. Iceberg
+1. Trino
+1. OpenTelemetry
 1. Transactional Outbox - DB 更新とイベント発行を同一トランザクションに乗せる
 1. 書き込みをイベント列として記録し、Kafka で流して、Streams / Flink で読み取りモデルを構築する
 1. Saga - 分散トランザクションと補償処理

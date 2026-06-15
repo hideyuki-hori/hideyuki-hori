@@ -25,7 +25,7 @@ CPU使用率にもディスクアクセス数にも負けぬ
 
 ## Done
 
-- 2026-06-16 [🔄Debezium を理解する](https://zenn.dev/hideyuki_hori/articles/d0c5a314bd9ccb)
+- 2026-06-16 [🔄 Debezium を理解する](https://zenn.dev/hideyuki_hori/articles/d0c5a314bd9ccb)
 - 2026-06-14 [🔮 Cassandra を理解する](https://zenn.dev/hideyuki_hori/articles/c51f9183cebf89)
 - 2026-06-13 [🔌 Kafka Connect を理解する](https://zenn.dev/hideyuki_hori/articles/8d13751240091c)
 - 2026-06-13 [🪲 Kafka を理解する](https://zenn.dev/hideyuki_hori/articles/8ce83fd931baa8)

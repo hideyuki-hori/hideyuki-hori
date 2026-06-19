@@ -44,6 +44,4 @@ CPU使用率にもディスクアクセス数にも負けぬ
 1. Iceberg
 1. Trino
 1. OpenTelemetry
-1. Transactional Outbox - DB 更新とイベント発行を同一トランザクションに乗せる
-1. 書き込みをイベント列として記録し、Kafka で流して、Streams / Flink で読み取りモデルを構築する
-1. Saga - 分散トランザクションと補償処理
+1. TODO

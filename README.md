@@ -42,6 +42,7 @@ CPU使用率にもディスクアクセス数にも負けぬ
 
 1. flink
 1. Iceberg
-1. Trino
+1. Spark
+2. Trino
 1. OpenTelemetry
 1. TODO

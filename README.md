@@ -18,7 +18,7 @@
 
 ## In Progress
 
-- kafka-streams
+- flink
 
 ## TODO
 

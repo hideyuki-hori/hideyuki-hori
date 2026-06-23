@@ -22,7 +22,6 @@
 
 ## TODO
 
-1. flink
 1. Iceberg
 1. Spark
 2. Trino

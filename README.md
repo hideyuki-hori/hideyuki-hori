@@ -12,6 +12,7 @@
 - 2026-06-16 [🔄 Debezium を理解する](https://zenn.dev/hideyuki_hori/articles/d0c5a314bd9ccb)
 - 2026-06-18 [✈️ Avro を理解する](https://zenn.dev/hideyuki_hori/articles/b5818ce5a659fa)
 - 2026-06-23 [🌊 Kafka Streams を理解する](https://zenn.dev/hideyuki_hori/articles/a1d197819c161a)
+- 2026-06-27 [🐿️ Flink の概念を理解する](https://zenn.dev/hideyuki_hori/articles/9a20d7cd25e3b8)
 
 > If you'd like to read these articles in English, try appending `?locale=en` to the article URL.
 > If Zenn has finished its automatic translation, you'll be able to read them in English.

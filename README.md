@@ -20,12 +20,21 @@
 
 ## In Progress
 
-- flink
+1. EDA-09 Flink を動かす
 
 ## TODO
 
-1. Iceberg
-1. Spark
-2. Trino
-1. OpenTelemetry
+1. EDA-10 Flink の状態と復旧を理解する
+1. EDA-11 Flink SQL を理解する
+1. EDA-12 Iceberg の概念を理解する
+1. EDA-13 Flink から Iceberg に書く
+1. EDA-14 Iceberg のスナップショットと進化を理解する
+1. EDA-15 CDC を Iceberg に畳む
+1. EDA-16 Spark の概念を理解する
+1. EDA-17 Spark で Iceberg をバッチ集計する
+1. EDA-18 Spark で Iceberg を整える（compaction / スナップショット期限切れ）
+1. EDA-19 Trino の概念を理解する
+1. EDA-20 Trino で Iceberg を SQL クエリする
+1. EDA-21 Trino でフェデレーション（Iceberg × MySQL を JOIN）
+1. EDA-22 OpenTelemetry の概念を理解する
 1. TODO

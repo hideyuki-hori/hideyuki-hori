@@ -14,17 +14,17 @@
 - 2026-06-23 [🌊 EDA-06 Kafka Streams を理解する](https://zenn.dev/hideyuki_hori/articles/a1d197819c161a)
 - 2026-06-27 [🐿️ EDA-07 Flink の概念を理解する](https://zenn.dev/hideyuki_hori/articles/9a20d7cd25e3b8)
 - 2026-06-28 [🧵 EDA-08 イベント駆動アーキテクチャ の学びを振り返る EDA-01-07](https://zenn.dev/hideyuki_hori/articles/cb42ab52143199)
-
+- 2026-07-02 [🚀 EDA-09 Flink を動かす](https://zenn.dev/hideyuki_hori/articles/4cfd17134fc1f0)
+ 
 > If you'd like to read these articles in English, try appending `?locale=en` to the article URL.
 > If Zenn has finished its automatic translation, you'll be able to read them in English.
 
 ## In Progress
 
-- EDA-09 Flink を動かす
+- EDA-10 Flink の状態と復旧を理解する
 
 ## TODO
 
-- EDA-10 Flink の状態と復旧を理解する
 - EDA-11 Flink SQL を理解する
 - EDA-12 Iceberg の概念を理解する
 - EDA-13 Flink から Iceberg に書く

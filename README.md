@@ -28,20 +28,18 @@
 
 ## In Progress
 
-- EDA-10 Flink の状態と復旧を理解する
+Thinking...
 
 ## TODO
 
-- EDA-11 Flink SQL を理解する
-- EDA-12 Iceberg の概念を理解する
-- EDA-13 Flink から Iceberg に書く
-- EDA-14 Iceberg のスナップショットと進化を理解する
-- EDA-15 CDC を Iceberg に畳む
-- EDA-16 Spark の概念を理解する
-- EDA-17 Spark で Iceberg をバッチ集計する
-- EDA-18 Spark で Iceberg を整える（compaction / スナップショット期限切れ）
-- EDA-19 Trino の概念を理解する
-- EDA-20 Trino で Iceberg を SQL クエリする
-- EDA-21 Trino でフェデレーション（Iceberg × MySQL を JOIN）
+- Iceberg の概念を理解する
+- Iceberg のスナップショットと進化を理解する
+- CDC を Iceberg に畳む
+- Spark の概念を理解する
+- Spark で Iceberg をバッチ集計する
+- Spark で Iceberg を整える（compaction / スナップショット期限切れ）
+- Trino の概念を理解する
+- Trino で Iceberg を SQL クエリする
+- Trino でフェデレーション（Iceberg × MySQL を JOIN）
 - EDA-22 OpenTelemetry の概念を理解する
 - TODO

@@ -41,5 +41,5 @@ Thinking...
 - Trino の概念を理解する
 - Trino で Iceberg を SQL クエリする
 - Trino でフェデレーション（Iceberg × MySQL を JOIN）
-- EDA-22 OpenTelemetry の概念を理解する
+- OpenTelemetry の概念を理解する
 - TODO

@@ -29,17 +29,10 @@
 
 ## In Progress
 
-Thinking...
+- Spark の概念を理解する
 
 ## TODO
 
-- Iceberg のスナップショットと進化を理解する
-- CDC を Iceberg に畳む
-- Spark の概念を理解する
-- Spark で Iceberg をバッチ集計する
-- Spark で Iceberg を整える（compaction / スナップショット期限切れ）
 - Trino の概念を理解する
-- Trino で Iceberg を SQL クエリする
-- Trino でフェデレーション（Iceberg × MySQL を JOIN）
 - OpenTelemetry の概念を理解する
 - TODO

@@ -18,7 +18,7 @@ Vimium をリスペクトしつつ、使う機能だけ残して自分の手に�
 が入ってる。
 
 vi + os（ラテン語で骨）。ギリシャ語で読むと βίος（生）。
-なんげに [Live Reload 機能](https://github.com/hideyuki-hori/vios/blob/main/packages/chrome/build.mjs) を作ったんだが、権限追加みたいなデカい変更じゃなかったら読み込み直しせず変更を chrome に伝えられるのがめちゃくちゃ気に入ってる。
+[Live Reload 機能](https://github.com/hideyuki-hori/vios/blob/main/packages/chrome/build.mjs) を作ったんだが、権限追加みたいなデカい変更じゃなかったら読み込み直しせず変更を chrome に伝えられるのがなにげに気に入ってる。
 
 # I ♥ Event Driven Architecture
 

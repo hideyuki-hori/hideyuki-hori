@@ -8,7 +8,8 @@
 
 **[vios](https://github.com/hideyuki-hori/vios)**
 
-Vimium をリスペクトしつつ、使う機能だけ残して自分の手に合わせた Chrome 拡張で
+Vimium をリスペクト。  
+自分が使う機能だけ残した Chrome 拡張で
 
 - hjkl スクロール
 - リンクヒント
